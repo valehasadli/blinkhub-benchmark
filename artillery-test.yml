@@ -1,0 +1,10 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 2  # Duration of the test in seconds
+      arrivalRate: 5000  # Number of new virtual users per second
+
+scenarios:
+  - flow:
+      - get:
+          url: "/login/User{{ $loopCount }}"
